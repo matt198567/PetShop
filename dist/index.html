@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231230174819">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240114173211">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,13 +19,17 @@
 				<div class="header__menu menu">
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="#" class="menu__link">Home</a></li>
-							<li class="menu__item"><a href="#" class="menu__link">About</a></li>
 							<li class="menu__item">
-								<a href="#" class="menu__link">Products</a>
+								<a data-goto=".hero" href="#" class="menu__link">Home</a>
 							</li>
 							<li class="menu__item">
-								<a href="#" class="menu__link">Services</a>
+								<a data-goto-header data-goto=".about-us" href="#" class="menu__link">About</a>
+							</li>
+							<li class="menu__item">
+								<a data-goto-header data-goto=".products" href="#" class="menu__link">Products</a>
+							</li>
+							<li class="menu__item">
+								<a data-goto-header data-goto=".services" href="#" class="menu__link">Services</a>
 							</li>
 						</ul>
 					</nav>
@@ -123,10 +127,10 @@
 				</div>
 				<picture><source srcset="img/hero/hero-bg.webp" type="image/webp"><img class="hero__bg" src="img/hero/hero-bg.jpg" alt="HeroBackground" /></picture>
 			</section>
-			<section class="about-us">
+			<section data-prlx-parent class="about-us">
 				<div class="about-us__container">
 					<div class="about-us__body">
-						<div class="about-us__image">
+						<div data-prlx class="about-us__image">
 							<picture><source srcset="img/about/image.01.webp" type="image/webp"><img src="img/about/image.01.jpg" alt="ImageDog" /></picture>
 						</div>
 						<div class="about-us__content">
@@ -370,9 +374,9 @@
 					<a href="#" class="block-header__button products__button button"><span>Explore</span></a>
 				</div>
 			</section>
-			<section class="services">
+			<section data-prlx-parent class="services">
 				<div class="services__container">
-					<div class="services__image">
+					<div data-prlx class="services__image">
 						<picture><source srcset="img/services/image.01.webp" type="image/webp"><img src="img/services/image.01.jpg" alt="ImageCat" /></picture>
 					</div>
 					<div class="services__block-header block-header block-header--white">
@@ -392,28 +396,28 @@
 					</div>
 				</div>
 			</section>
-			<section class="gallery">
+			<section data-prlx-parent class="gallery">
 				<div class="gallery__container">
 					<ul data-gallery class="gallery__list">
-						<li class="gallery__item">
+						<li data-prlx class="gallery__item">
 							<a href="img/gallery/image.01.jpg" class="gallery__link">
 								<picture><source srcset="img/gallery/image.01.webp" type="image/webp"><img class="gallery__image" src="img/gallery/image.01.jpg" alt="ImageGallery" /></picture>
 							</a>
 							<a href="#" class="gallery__text _icon-slider-arrow">Taking dogs care to the next level</a>
 						</li>
-						<li class="gallery__item">
+						<li data-prlx class="gallery__item">
 							<a href="img/gallery/image.02.jpg" class="gallery__link">
 								<picture><source srcset="img/gallery/image.02.webp" type="image/webp"><img class="gallery__image" src="img/gallery/image.02.jpg" alt="ImageGallery" /></picture>
 							</a>
 							<a href="#" class="gallery__text _icon-slider-arrow">We value the best health of your pets</a>
 						</li>
-						<li class="gallery__item">
+						<li data-prlx class="gallery__item">
 							<a href="img/gallery/image.03.jpg" class="gallery__link">
 								<picture><source srcset="img/gallery/image.03.webp" type="image/webp"><img class="gallery__image" src="img/gallery/image.03.jpg" alt="ImageGallery" /></picture>
 							</a>
 							<a href="#" class="gallery__text _icon-slider-arrow">Trust us with your pet’s vacation</a>
 						</li>
-						<li class="gallery__item">
+						<li data-prlx class="gallery__item">
 							<a href="img/gallery/image.04.jpg" class="gallery__link">
 								<picture><source srcset="img/gallery/image.04.webp" type="image/webp"><img class="gallery__image" src="img/gallery/image.04.jpg" alt="ImageGallery" /></picture>
 							</a>
@@ -422,14 +426,18 @@
 					</ul>
 				</div>
 			</section>
-			<section class="contacts">
+			<section data-prlx-parent class="contacts">
 				<div class="contacts__container">
 					<div class="contacts__media media-contacts">
 						<div class="media-contacts__images">
-							<picture><source srcset="img/contacts/image.01.webp" type="image/webp"><img class="media-contacts__image" src="img/contacts/image.01.jpg" alt="ImagePets" /></picture>
-							<picture><source srcset="img/contacts/image.02.webp" type="image/webp"><img class="media-contacts__image" src="img/contacts/image.02.jpg" alt="ImagePets" /></picture>
+							<div class="media-contacts__blok_image">
+								<picture><source srcset="img/contacts/image.01.webp" type="image/webp"><img data-prlx class="media-contacts__image" src="img/contacts/image.01.jpg" alt="ImagePets" /></picture>
+								<a href="#" class="media-contacts__play _icon-play"><span></span></a>
+							</div>
+							<div class="media-contacts__blok_image">
+								<picture><source srcset="img/contacts/image.02.webp" type="image/webp"><img data-prlx class="media-contacts__image" src="img/contacts/image.02.jpg" alt="ImagePets" /></picture>
+							</div>
 						</div>
-						<a href="#" class="media-contacts__play _icon-play"></a>
 					</div>
 					<div class="contacts__block-header block-header">
 						<div class="block-header__label">Contact us</div>
@@ -450,6 +458,56 @@
 							</ul>
 						</address>
 						<a href="#" class="block-header__button button"><span>Contact</span></a>
+					</div>
+				</div>
+			</section>
+			<section class="reviews">
+				<div class="reviews__container">
+					<div class="reviews__slider swiper">
+						<div class="reviews__wrapper swiper-wrapper">
+							<div class="reviews__slide swiper-slide">
+								<div class="reviews__icon">
+									<img src="img/reviews/icon.01.svg" alt="Icon" />
+								</div>
+								<blockquote class="reviews__item">
+									<div class="reviews__text">
+										<p>
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+											Etiam vulputate pharetra ante id congue. Cras feugiat,
+											diam a placerat posuere, arcu risus porta elit, sed
+											finibus magna lorem ut turpis.
+										</p>
+									</div>
+									<cite class="reviews__author">Etiam vulputate</cite>
+								</blockquote>
+							</div>
+							<div class="reviews__slide swiper-slide">
+								<div class="reviews__icon">
+									<img src="img/reviews/icon.01.svg" alt="Icon" />
+								</div>
+								<blockquote class="reviews__item">
+									<div class="reviews__text">
+										<p>
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+											Etiam vulputate pharetra ante id congue. Cras feugiat,
+											diam a placerat posuere, arcu risus porta elit, sed
+											finibus magna lorem ut turpis.
+										</p>
+										<p>
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+											Etiam vulputate pharetra ante id congue. Cras feugiat,
+											diam a placerat posuere, arcu risus porta elit, sed
+											finibus magna lorem ut turpis.
+										</p>
+									</div>
+									<cite class="reviews__author">Etiam vulputate</cite>
+								</blockquote>
+							</div>
+						</div>
+						<div class="reviews__arrows">
+							<button class="reviews__arrow reviews__arrow--left _icon-slider-arrow"></button>
+							<button class="reviews__arrow reviews__arrow--right _icon-slider-arrow"></button>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -523,7 +581,7 @@
 		</footer>
 
 	</div>
-	<script src="js/app.min.js?_v=20231230174819"></script>
+	<script src="js/app.min.js?_v=20240114173211"></script>
 </body>
 
 </html>
