@@ -3801,8 +3801,8 @@
             observer: true,
             observeParents: true,
             slidesPerView: 1,
+            loop: true,
             spaceBetween: 30,
-            centeredSlides: true,
             autoHeight: true,
             speed: 800,
             navigation: {
