@@ -5869,6 +5869,20 @@ PERFORMANCE OF THIS SOFTWARE.
     }
     const da = new DynamicAdapt("max");
     da.init();
+    document.addEventListener("DOMContentLoaded", (function() {
+        function isInViewport(element, offset = 0) {
+            var rect = element.getBoundingClientRect();
+            return rect.top >= -offset && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + offset && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+        }
+        function handleScroll() {
+            var blockHeaders = document.querySelectorAll(".block-header");
+            blockHeaders.forEach((function(blockHeader) {
+                if (isInViewport(blockHeader, window.innerHeight * .4) && !blockHeader.classList.contains("block-header_active")) blockHeader.classList.add("block-header_active");
+            }));
+        }
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+    }));
     window["FLS"] = true;
     isWebp();
     menuInit();

@@ -329,6 +329,14 @@ textarea.input {
   display: grid;
   gap: 1.25rem;
   justify-items: start;
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+      -ms-transform: translateY(50px);
+          transform: translateY(50px);
+  -webkit-transition: opacity 0.8s ease, -webkit-transform 0.8s ease;
+  transition: opacity 0.8s ease, -webkit-transform 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease, -webkit-transform 0.8s ease;
 }
 
 .block-header--center {
@@ -337,6 +345,13 @@ textarea.input {
 
 .block-header--white {
   color: #fff;
+}
+
+.block-header_active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .block-header__label {
@@ -771,6 +786,43 @@ textarea.input {
   text-transform: capitalize;
   font-weight: 400;
   line-height: 100%;
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
+  opacity: 0;
+}
+
+.hero__title_active {
+  -webkit-animation: slideInUp 2s ease 0s 1 normal forwards;
+          animation: slideInUp 2s ease 0s 1 normal forwards;
+}
+
+@-webkit-keyframes slideInUp {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .hero__slider.swiper {
@@ -1197,6 +1249,11 @@ textarea.input {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+.gallery__block-header {
+  text-align: center;
+  margin: 0 auto;
 }
 
 .gallery__list {
@@ -2756,7 +2813,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   }
 
   .gallery {
-    padding-top: 0.3125rem;
+    padding-top: 1.875rem;
   }
 
   .gallery {
@@ -3593,15 +3650,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     }
 }
 
-@supports (padding-top: clamp( 0.3125rem , -0.8575468019rem  +  5.8502340094vw , 5rem )) {
+@supports (padding-top: clamp( 1.875rem , 1.0949687988rem  +  3.9001560062vw , 5rem )) {
     .gallery {
-      padding-top: clamp( 0.3125rem , -0.8575468019rem  +  5.8502340094vw , 5rem );
+      padding-top: clamp( 1.875rem , 1.0949687988rem  +  3.9001560062vw , 5rem );
     }
 }
 
-@supports not (padding-top: clamp( 0.3125rem , -0.8575468019rem  +  5.8502340094vw , 5rem )) {
+@supports not (padding-top: clamp( 1.875rem , 1.0949687988rem  +  3.9001560062vw , 5rem )) {
     .gallery {
-      padding-top: calc(0.3125rem + 4.6875 * (100vw - 20rem) / 80.125);
+      padding-top: calc(1.875rem + 3.125 * (100vw - 20rem) / 80.125);
     }
 }
 
