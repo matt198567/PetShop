@@ -5870,6 +5870,42 @@ PERFORMANCE OF THIS SOFTWARE.
     const da = new DynamicAdapt("max");
     da.init();
     document.addEventListener("DOMContentLoaded", (function() {
+        const activeImageLinks = document.querySelectorAll(".media-contacts__play");
+        activeImageLinks.forEach((link => {
+            link.addEventListener("click", (event => {
+                event.preventDefault();
+                const youtubeVideoId = link.dataset.videoId;
+                const iframeSrc = `https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1`;
+                const videoContainer = document.createElement("div");
+                videoContainer.className = "video-container";
+                const iframe = document.createElement("iframe");
+                iframe.src = iframeSrc;
+                iframe.width = "560";
+                iframe.height = "315";
+                iframe.title = "YouTube video player";
+                iframe.frameBorder = "0";
+                iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                iframe.allowFullscreen = true;
+                videoContainer.appendChild(iframe);
+                videoContainer.style.display = "flex";
+                videoContainer.style.justifyContent = "center";
+                videoContainer.style.alignItems = "center";
+                videoContainer.style.position = "fixed";
+                videoContainer.style.top = "0";
+                videoContainer.style.left = "0";
+                videoContainer.style.width = "100%";
+                videoContainer.style.height = "100%";
+                videoContainer.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+                videoContainer.style.zIndex = "9999";
+                const body = document.querySelector("body");
+                body.appendChild(videoContainer);
+                videoContainer.addEventListener("click", (() => {
+                    body.removeChild(videoContainer);
+                }));
+            }));
+        }));
+    }));
+    document.addEventListener("DOMContentLoaded", (function() {
         function isInViewport(element, offset = 0) {
             var rect = element.getBoundingClientRect();
             return rect.top >= -offset && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) + offset && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
